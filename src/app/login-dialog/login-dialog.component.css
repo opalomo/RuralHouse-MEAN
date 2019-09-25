@@ -1,0 +1,19 @@
+.green{
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.green:hover {
+  background-color: rgb(32, 163, 20);
+  color: white;
+}
+
+.red{
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.red:hover {
+  background-color: rgb(172, 27, 27);
+  color: white;
+}

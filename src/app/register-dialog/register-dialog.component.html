@@ -1,0 +1,48 @@
+<h2 style="text-align: center">Join our community!</h2>
+  <div id="loginFormWrapper">
+    <form id="loginForm" [formGroup]="formGroup">
+      <mat-vertical-stepper [linear]="true" formArrayName="formArray">
+        <mat-step [formGroupName]="0" [stepControl]="formArray?.get([0])">
+          <ng-template matStepLabel>Fill out your name</ng-template>
+          <mat-form-field>
+            <mat-label>First name</mat-label>
+            <input matInput formControlName="firstNameFormCtrl" required>
+            <mat-error>This field is required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Last name</mat-label>
+            <input matInput formControlName="lastNameFormCtrl" required>
+            <mat-error>This field is required</mat-error>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+        <mat-step formGroupName="1" [stepControl]="formArray?.get([1])">
+            <ng-template matStepLabel>
+              <div>Fill out your email address</div>
+            </ng-template>
+            <mat-form-field>
+              <mat-label>Email address</mat-label>
+              <input matInput formControlName="emailFormCtrl" required>
+              <mat-error>The input is invalid.</mat-error>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </mat-step>
+          <mat-step>
+              <ng-template matStepLabel>Confirm filled data?</ng-template>
+              <div>
+                <button mat-button class="green" (click)="saveUser()">Save</button>
+                <button mat-button class="red" (click)="closeDialog()">Reset</button>
+              </div>
+            </mat-step>
+      </mat-vertical-stepper>
+    </form>
+  </div>
+
+<!--meterle una pestaña para el logeo-->
+<!--se podria reutilizar el componente, si clickamos un boton aparece en una pestaña, si no en la otra-->

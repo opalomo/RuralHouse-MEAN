@@ -1,0 +1,13 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-button{
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.mat-button:hover {
+  background-color: rgb(216, 67, 191);
+  color: white;
+}

@@ -1,0 +1,22 @@
+<h2 style="text-align: center">User Login</h2><p></p>
+<mat-divider></mat-divider><p></p>
+<mat-dialog-content style="text-align: center">
+  <div id="loginFormWrapper">
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Account email" required>
+          </mat-form-field>
+          <p></p>
+          <mat-form-field>
+            <input matInput placeholder="Password" type ="password" required>
+          </mat-form-field>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+<div id="loginActionWrapper" style="justify-content: flex-end">
+  <button mat-button class ="green" (click)="loginUser()">Login</button>
+  <button mat-button class = "red" (click)="closeDialog()">Cancel</button>
+</div>
+</mat-dialog-actions>
+
