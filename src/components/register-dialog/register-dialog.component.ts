@@ -3,11 +3,12 @@ import { ApiService } from 'src/app/services/api.service';
 import { FormControl, Validators} from '@angular/forms';
 import { User } from 'src/app/models/user';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css'],
+  selector: 'app-register-dialog',
+  templateUrl: './register-dialog.component.html',
+  styleUrls: ['./register-dialog.component.css'],
   providers: [ApiService]
 })
 export class RegisterDialogComponent implements OnInit {
@@ -18,6 +19,8 @@ export class RegisterDialogComponent implements OnInit {
   passCtrl = new FormControl( '', [Validators.required, Validators.minLength(8)]);
 
   userToRegister = new User();
+
+  users: User[] ;
 
 
   constructor(public dialogRef: MatDialogRef<RegisterDialogComponent>,
@@ -41,7 +44,18 @@ export class RegisterDialogComponent implements OnInit {
     this.userToRegister.setEmail(this.emailCtrl.value);
     this.userToRegister.setPassword(this.passCtrl.value);
 
-    this.apiService.putUser(this.userToRegister);
+    //this.apiService.putUser(this.userToRegister);
+
+
+  }
+
+  prueba(): void {
+
+    console.log('Users prev: ', this.users);
+    this.apiService.getUsers()
+      .subscribe(users => this.users = JSON.parse(users); //tengo que modelar lo que me viene
+      ;);
+    console.log('Users post: ', this.users);
   }
 
   close() {

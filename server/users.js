@@ -1,8 +1,3 @@
-//THIS FILE WILL CONTAIN THE FOLOWING FUNCTIONS
-
-// register
-// login
-
 const { Router } = require('express');
 
 const router = Router();
@@ -12,7 +7,7 @@ const users = require('./sampleData.json');
 const _= require('underscore');
 
 //esta va a ser la funcion de logeo
-router.get('/:email/:password', (req,res) => { //mas adelante hacerlo con post
+/*router.get('/', (req,res) => { //mas adelante hacerlo con post
 
   const { email, password } = req.body;
 
@@ -32,11 +27,15 @@ router.get('/:email/:password', (req,res) => { //mas adelante hacerlo con post
 
     res.send('Wrong request');
   }
+});*/
+
+router.get('/', (req,res) => {
+  res.send(users);
 });
 
 
 //esta va a ser la funcion de registro
-router.post('/register', (req,res) => {
+router.post('/', (req,res) => {
 
   const { name, surname, email, password} = req.body;
 

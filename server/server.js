@@ -1,6 +1,7 @@
 
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.set('json spaces',2);
 app.use(express.urlencoded({extended: false}));
 
 app.use(morgan('common'));
+
+app.use(cors());
 
 //to support json format files
 app.use(express.json());

@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError} from 'rxjs';
+import { Observable, throwError, of} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { User } from '../models/user';
 
@@ -23,15 +23,14 @@ export class ApiService {
     this.selectedUser = new User();
   }
 
-  getUsers() {
+  getUsers(): Observable<User[]> {
 
-    return this.http.get(this.uri + 'users');
-
-    }
+    return this.http.get<User[]>(this.uri + 'users/');
+  }
 
   postUser( user: User ) {
 
-    return this.http.post(this.uri + 'users', user);
+    return this.http.post(this.uri + 'users/', user);
   }
 
   putUser( user: User) {
