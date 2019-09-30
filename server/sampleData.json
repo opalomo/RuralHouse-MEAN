@@ -1,14 +1,21 @@
 [
   {
-    "id": "1",
-    "House": "Sample House 1",
-    "Description": "Lorem ipsum dolor sit amet consectetur adipiscing elit magna enim, facilisis quam nulla sociosqu dictumst donec pellentesque auctor, neque nullam vitae a placerat semper bibendum morbi.",
-    "Owner": "Oscar Palomo"
+    "name":"Oscar",
+    "surname": "Palomo",
+    "email": "oscar@gmail.com",
+    "password": "contraseña"
   },
   {
-    "id": "2",
-    "House": "Sample House 2",
-    "Description": "Lorem ipsum dolor sit amet consectetur adipiscing elit magna enim, facilisis quam nulla sociosqu dictumst donec pellentesque auctor, neque nullam vitae a placerat semper bibendum morbi.",
-    "Owner": "Antonio Palomo"
+    "name":"Antonio",
+    "surname": "Palomo",
+    "email": "antonio@gmail.com",
+    "password": "contraseña"
+  },
+  {
+    "name":"Amelia",
+    "surname": "Palomo",
+    "email": "amelia@gmail.com",
+    "password": "contraseña"
   }
+
 ]

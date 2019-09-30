@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
-import {RegisterDialogComponent} from '../register-dialog/register-dialog.component';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+
+import {RegisterDialogComponent} from '../register-dialog/register-dialog.component';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -16,7 +17,7 @@ export class NavigationBarComponent {
   //y en ese momento cambie la apariencia del background ya que pasamos a estar logueados
   //esto mismo ocurre cuando el pavo se logea con su usuario
 
-  openRegisterDialog(): void{
+  openRegisterDialog():void {
 
       const dialogRef = this.dialog.open(RegisterDialogComponent, {
         height: '90%',
@@ -29,7 +30,7 @@ export class NavigationBarComponent {
       });
   }
 
-  openLoginDialog(){
+  openLoginDialog() {
 
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       height: '90%',

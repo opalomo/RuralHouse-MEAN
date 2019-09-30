@@ -1,0 +1,51 @@
+<div id="wrapper">
+    <mat-vertical-stepper>
+      <mat-step>
+        <!-- PASO 1 -->
+        <ng-template matStepLabel>Fill out your name</ng-template>
+          <p>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Name" [formControl]="nameCtrl" required>
+              <mat-error>Required field</mat-error>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Surname" [formControl]="surnameCtrl" required>
+              <mat-error>Required field</mat-error>
+            </mat-form-field>
+          </p>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <!-- PASO 2 -->
+          <ng-template matStepLabel>Fill out your login credentials</ng-template>
+          <p>
+            <mat-form-field>
+              <input matInput type="email" placeholder="Email" [formControl]="emailCtrl" required>
+              <mat-error *ngIf="emailCtrl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" [formControl]="passCtrl" required>
+              <mat-error>Required field</mat-error>
+            </mat-form-field>
+          </p>
+          <div>
+              <button mat-button matStepperNext>Next</button>
+              <button mat-button matStepperPrevious>Back</button>
+          </div>
+        </mat-step>
+        <mat-step>
+            <!-- PASO 3 -->
+            <ng-template matStepLabel>Confirm filled data?</ng-template>
+            <div>
+              <button mat-button class="green" style="margin-left: 2px" (click)="register()">Save</button>
+              <button mat-button class="red" (click)="close()">Reset</button>
+            </div>
+            </mat-step>
+    </mat-vertical-stepper>
+  </div>

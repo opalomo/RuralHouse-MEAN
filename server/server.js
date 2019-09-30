@@ -1,5 +1,6 @@
 
 const express = require('express');
+const morgan = require('morgan');
 
 const app = express();
 
@@ -14,12 +15,18 @@ app.set('json spaces',2);
 //to understand the data in the forms sent to us by the front
 app.use(express.urlencoded({extended: false}));
 
+app.use(morgan('common'));
+
 //to support json format files
 app.use(express.json());
 
 app.use(require('./routes.js'));
+
+app.use('/api/users', require('./users.js'));
+
+//tutorial example
 app.use('/api/houses',require('./houses.js'));
-app.use('/api/users',require('./sampleUsers.js'));
+//app.use('/api/users',require('./sampleUsers.js'));
 
 /*******************************************/
 /*************SERVER FUNCTIONS*************/

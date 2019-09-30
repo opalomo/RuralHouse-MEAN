@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+
 import { RegisterDialogComponent } from './register-dialog.component';
 
-describe('RegisterDialogComponent', () => {
+describe('RegistroComponent', () => {
   let component: RegisterDialogComponent;
   let fixture: ComponentFixture<RegisterDialogComponent>;
 
