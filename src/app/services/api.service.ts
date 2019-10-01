@@ -16,11 +16,10 @@ export class ApiService {
 
   users: User[];
 
-  //debugUser = new User();
-
   constructor( private http: HttpClient) {
 
     this.selectedUser = new User();
+
   }
 
   getUsers(): Observable<User[]> {
@@ -30,12 +29,12 @@ export class ApiService {
 
   postUser( user: User ) {
 
-    return this.http.post(this.uri + 'users/', user);
+    return this.http.post<User[]>(this.uri + 'users/', user);
   }
 
   putUser( user: User) {
     console.log('alcanzado: ', user);
-    return this.http.put(this.uri + 'users/', user );
+    return this.http.put<User[]>(this.uri + 'users/', user );
   }
 
   deleteUser( user: User) {

@@ -51,14 +51,19 @@ export class RegisterDialogComponent implements OnInit {
 
   prueba(): void {
 
-    console.log('Users prev: ', this.users);
-    this.apiService.getUsers()
-      .subscribe(users => this.users = JSON.parse(users); //tengo que modelar lo que me viene
-      ;);
-    console.log('Users post: ', this.users);
+    this.userToRegister.setName(this.nameCtrl.value);
+    this.userToRegister.setSurname(this.surnameCtrl.value);
+    this.userToRegister.setEmail(this.emailCtrl.value);
+    this.userToRegister.setPassword(this.passCtrl.value);
+
+    this.apiService.putUser(this.userToRegister)
+      .subscribe(users => console.log(users)
+    );
+
   }
 
   close() {
+
     this.dialogRef.close('RegistroComponent >> Registration canceled');
   }
 

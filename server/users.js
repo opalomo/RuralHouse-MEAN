@@ -51,7 +51,8 @@ router.post('/', (req,res) => {
 
     console.log('Bakend >> Usuario añadido');
 
-    res.json(users);
+    //res.json(users);
+    res.send(users);
 
   } else {
 
