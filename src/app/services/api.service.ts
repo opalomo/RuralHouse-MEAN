@@ -30,12 +30,11 @@ export class ApiService {
   }
 
   postUser( user: User ) {
-
+    console.log('Llamando al back');
     return this.http.post<User[]>(this.uri + 'users/', user);
   }
 
   putUser( user: User) {
-
     return this.http.put<User[]>(this.uri + 'users/', user );
   }
 

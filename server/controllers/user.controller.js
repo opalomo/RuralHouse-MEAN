@@ -21,10 +21,7 @@ userCtrl.createUser = async (req,res) => {
   const user = new User(req.body);
   await user.save();
   console.log('Usuario creado');
- /* res.json({
-    status: 'User created'
-  });*/
-  res.send( await User.find());
+  res.json( await User.find() );
 }
 
 userCtrl.editUser = async (req,res) => {

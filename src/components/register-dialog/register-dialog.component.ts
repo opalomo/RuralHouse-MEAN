@@ -31,13 +31,13 @@ export class RegisterDialogComponent implements OnInit {
 
   register() {
 
-    //en el futuro hacer que se asignen los valores desde la constructora (menos el id)
     this.userToRegister.setName( this.nameCtrl.value);
     this.userToRegister.setSurname(this.surnameCtrl.value);
     this.userToRegister.setEmail(this.emailCtrl.value);
     this.userToRegister.setPassword(this.passCtrl.value);
 
-    this.apiService.putUser(this.userToRegister)
+    console.log('Datos obtenidos, llamando al servicio');
+    this.apiService.postUser(this.userToRegister)
       .subscribe(users => console.log(users)
     );
   }
