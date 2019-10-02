@@ -8,4 +8,6 @@ const UserSchema = new Schema ( {
   password: {type : String, required:true}
 } );
 
+
+// De esta forma le indico a MongoDB que este es el esquema a seguir con los usuarios
 module.exports = mongoose.model('User', UserSchema);

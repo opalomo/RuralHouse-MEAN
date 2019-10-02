@@ -2,6 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const {mongoose} = require('./database');
 
 const app = express();
 
@@ -23,13 +24,7 @@ app.use(cors());
 //to support json format files
 app.use(express.json());
 
-app.use(require('./routes.js'));
-
-app.use('/api/users', require('./users.js'));
-
-//tutorial example
-app.use('/api/houses',require('./houses.js'));
-//app.use('/api/users',require('./sampleUsers.js'));
+app.use('/api/users', require('./routes/users.route.js'));
 
 /*******************************************/
 /*************SERVER FUNCTIONS*************/

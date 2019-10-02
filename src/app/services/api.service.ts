@@ -22,6 +22,8 @@ export class ApiService {
 
   }
 
+  // User functions
+
   getUsers(): Observable<User[]> {
 
     return this.http.get<User[]>(this.uri + 'users/');
@@ -33,20 +35,12 @@ export class ApiService {
   }
 
   putUser( user: User) {
-    console.log('alcanzado: ', user);
+
     return this.http.put<User[]>(this.uri + 'users/', user );
   }
 
   deleteUser( user: User) {
     return this.http.delete( this.uri + 'users/' + `${user.getId()}`);
-  }
-
-  getNewId(): number {
-    //primero repoblar el array de users
-    //despues contar el numero de elementos
-    // crear un id con length()+1
-    return 0;
-
   }
 
 }
