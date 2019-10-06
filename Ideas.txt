@@ -1,0 +1,5 @@
+Aqui ire anotando ideas que se me ocurran para este proyecto
+
+
+1- Cifrar la contraseña de los usuarios en la BD
+2-

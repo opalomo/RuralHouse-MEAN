@@ -1,2 +1,4 @@
-<app-navigation-bar></app-navigation-bar>
-
+<app-navigation-bar (registrationSucces)="onRegisterEventFired($event)" (loginSucces)="onLoginEventFired()"></app-navigation-bar>
+<app-frontpage *ngIf="!isUserLogged"></app-frontpage>
+<app-user-frontpage *ngIf="isUserLogged"></app-user-frontpage>
+<app-footer></app-footer>

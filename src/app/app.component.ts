@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'RuralHouseWeb';
+
+  public isUserLogged = false;
+
+  // EVENT EMITTERS
+
+  onLoginEventFired() {
+    console.log('Login fired!');
+  }
+
+  onRegisterEventFired(eventArgs){
+    console.log('Register fired!');
+  }
+
 }

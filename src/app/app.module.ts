@@ -12,6 +12,9 @@ import { LoginDialogComponent } from '../components/login-dialog/login-dialog.co
 
 import {ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FrontpageComponent } from '../components/frontpage/frontpage.component';
+import { UserFrontpageComponent } from '../components/user-frontpage/user-frontpage.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     NavigationBarComponent,
     RegisterDialogComponent,
     LoginDialogComponent,
+    FrontpageComponent,
+    UserFrontpageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

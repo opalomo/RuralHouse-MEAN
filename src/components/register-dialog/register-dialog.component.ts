@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter, Output } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { FormControl, Validators} from '@angular/forms';
 import { User } from 'src/app/models/user';
@@ -20,11 +20,8 @@ export class RegisterDialogComponent implements OnInit {
 
   userToRegister = new User();
 
-  users: User[] ;
-
-
   constructor(public dialogRef: MatDialogRef<RegisterDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private apiService: ApiService) { }
+              @Inject(MAT_DIALOG_DATA) public data: any, private apiService: ApiService) { }
 
   ngOnInit() {
   }
@@ -40,6 +37,7 @@ export class RegisterDialogComponent implements OnInit {
     this.apiService.postUser(this.userToRegister)
       .subscribe(users => console.log(users)
     );
+    this.dialogRef.close('RegistroComponent >> Registration succesful');
   }
 
   close() {
@@ -51,10 +49,6 @@ export class RegisterDialogComponent implements OnInit {
     return this.emailCtrl.hasError('required') ? 'You must enter an email' :
       this.emailCtrl.hasError('email') ? 'Not a valid email' :
       '';
-  }
-
-  prueba(): void {
-
   }
 
 }

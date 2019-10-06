@@ -1,0 +1,28 @@
+Lo suyo seria que despues de que me registrase desde angular se diesen las
+directrices de logeo.
+
+En primer lugar vamos a implementar el logeo, y ya mas tarde se unen
+El logeo de momento llevara a una pagina en blanco a la que llamaremos user-frontpage
+
+El momento en el que el usuario reciba u nok de la bd al hacer el logeo o el registro
+se debe emitir un evento que desencadene la accion
+
+
+
+
+https://www.youtube.com/watch?v=d6gJLs3ZZII
+esto es un tutorial que muestra como hacer un frontpage responsive en el que
+se muestra una galeria de fotos, algo que podria ser bastante util ppara esta app
+
+
+se va a emitir un evento, en primer lugar del dialogo al toolbar para despues ser del toolbar al app. component
+
+como vamos a llamar en este orden :
+registro-toolvar-appcomponent
+estaria bien si en toolbar se hace lo siguiente:
+si el evento emitido es registrationSucces(true)
+entonces desde el toolbar se emite un evento que sea el mismo pal login que pal registrationSucces
+de esta maenra el app-component solo conoce el evento de login, no el de register
+
+Ademas de la variable en app component de islogged, la toolbar tambien debera tener dicha variable
+ya que en caso de estar logeado los botones registro y login deberan ser sustituidos por Logout y lo que sea

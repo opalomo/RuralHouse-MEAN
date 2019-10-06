@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 import {RegisterDialogComponent} from '../register-dialog/register-dialog.component';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -11,13 +12,10 @@ import {RegisterDialogComponent} from '../register-dialog/register-dialog.compon
 })
 export class NavigationBarComponent {
 
+
   constructor(public dialog: MatDialog) {}
 
-  // Al registrarse se debe emitir algun tipo de evento para que la pantalla principal sepa que se ha terminado con el registro
-  //y en ese momento cambie la apariencia del background ya que pasamos a estar logueados
-  //esto mismo ocurre cuando el pavo se logea con su usuario
-
-  openRegisterDialog():void {
+  openRegisterDialog() {
 
       const dialogRef = this.dialog.open(RegisterDialogComponent, {
         height: '90%',
