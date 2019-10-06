@@ -3,17 +3,17 @@ export class House {
   private id: number;
   private houseName: string;
   private owner: string;
-  private baths: number;
+  private bathrooms: number;
   private beds: number;
   private rooms: number;
 
-  constructor(id = 0 , houseName = '', owner = '', rooms = 0, beds = 0, baths = 0) {
+  constructor(id = 0 , houseName = '', owner = '', rooms = 0, beds = 0, bathrooms = 0) {
     this.id = id;
     this.houseName = houseName;
     this.owner = owner;
     this.rooms = rooms;
     this.beds = beds;
-    this.baths = baths;
+    this.bathrooms = bathrooms;
   }
 
   public getId() {
@@ -57,10 +57,10 @@ export class House {
   }
 
   public getBathrooms() {
-    return this.baths;
+    return this.bathrooms;
   }
 
   public setBathrooms( baths: number) {
-    this.baths = baths;
+    this.bathrooms = baths;
   }
 }

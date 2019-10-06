@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
+import { House } from 'src/app/models/house';
 
 @Component({
   selector: 'app-house-creator',
@@ -16,10 +17,17 @@ export class HouseCreatorComponent {
   bedsCtrl =  new FormControl( '', [Validators.required]);
   bathsCtrl =  new FormControl( '', [Validators.required]);
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   createHouse() {
-    console.log('Procedesmos a llamar al servicio');
+
+    const houseToCreate = new House(0, this.houseNameCtrl.value, this.contactMailCtrl.value,
+      this.roomsCtrl.value, this.bedsCtrl.value, this.bathsCtrl.value);
+
+    this.apiService.postHouse(houseToCreate)
+      .subscribe(houses => console.log(houses)
+    );
+    console.log('Procedemos a llamar al servicio');
   }
 
   getErrorMessage() {

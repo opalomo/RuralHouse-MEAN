@@ -43,18 +43,18 @@ export class ApiService {
 
   // House functions
 
-  getHouses(): Observable<User[]> {
+  getHouses(): Observable<House[]> {
 
-    return this.http.get<User[]>(this.uri + 'houses/');
+    return this.http.get<House[]>(this.uri + 'houses/');
   }
 
   postHouse( house: House ) {
     console.log('Llamando al back');
-    return this.http.post<User[]>(this.uri + 'houses/', house);
+    return this.http.post<House[]>(this.uri + 'houses/', house);
   }
 
   putHouse( house: House ) {
-    return this.http.put<User[]>(this.uri + 'houses/', house );
+    return this.http.put<House[]>(this.uri + 'houses/', house );
   }
 
   deleteHouse( house: House ) {
