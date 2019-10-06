@@ -2,7 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const {mongoose} = require('./database');
+const { mongoose } = require('./database');
 
 const app = express();
 
@@ -25,6 +25,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/users', require('./routes/users.route.js'));
+
+app.use('/api/houses', require('./routes/houses.route.js'));
 
 /*******************************************/
 /*************SERVER FUNCTIONS*************/

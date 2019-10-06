@@ -1,5 +1,6 @@
 .green{
   transition-duration: 0.4s;
+  color: green;
   cursor: pointer;
 }
 
@@ -10,6 +11,7 @@
 
 .red{
   transition-duration: 0.4s;
+  color: red;
   cursor: pointer;
 }
 

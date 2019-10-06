@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrontpageComponent implements OnInit {
 
+  clicked = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  switch() {
+    this.clicked = !this.clicked;
   }
 
 }

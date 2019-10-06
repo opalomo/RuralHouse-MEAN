@@ -3,8 +3,6 @@ const User = require('../models/user');
 
 const userCtrl = {};
 
-const users = require('../sampleData.json');
-
 userCtrl.getUsers = async (req, res) => { // escribimos el async antes de que empiiece la funcion
 
   const users = await User.find() // manera de decir que esto va a tomar tiempo, pero que espere a que termine para asignar el valor

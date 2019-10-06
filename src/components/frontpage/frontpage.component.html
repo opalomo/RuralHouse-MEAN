@@ -1,1 +1,5 @@
-<p>frontpage works!</p>
+<app-user-frontpage *ngIf='!clicked'></app-user-frontpage>
+<p style='text-align:center'>
+  <button mat-raised-button color="accent" (click)='switch()'>Show register form</button>
+</p>
+<app-house-creator *ngIf='clicked'></app-house-creator>

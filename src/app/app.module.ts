@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FrontpageComponent } from '../components/frontpage/frontpage.component';
 import { UserFrontpageComponent } from '../components/user-frontpage/user-frontpage.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { HouseCreatorComponent } from '../components/house-creator/house-creator.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from '../components/footer/footer.component';
     LoginDialogComponent,
     FrontpageComponent,
     UserFrontpageComponent,
-    FooterComponent
+    FooterComponent,
+    HouseCreatorComponent
   ],
   imports: [
     BrowserModule,

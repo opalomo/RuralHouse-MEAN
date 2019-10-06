@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HouseCreatorComponent } from '../house-creator/house-creator.component';
 
 @Component({
   selector: 'app-user-frontpage',
